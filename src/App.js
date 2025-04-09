@@ -1,4 +1,4 @@
-import { useFormik, validateYupSchema } from "formik";
+import { useFormik } from "formik";
 
 function App() {
   const formik = useFormik({
@@ -20,18 +20,19 @@ function App() {
       />
       <label>Apellido</label>
       <input 
-        name="lastnaem"
+        name="lastname"
         type="text"
         onChange={formik.handleChange}
         value={formik.values.lastname}
       />
-      <label>Nombre</label>
+      <label>Email</label>
       <input 
         name="email"
         type="email"
         onChange={formik.handleChange}
         value={formik.values.email}
       />
+      <button type="submit">Enviar</button>
     </form>
   );
 }
