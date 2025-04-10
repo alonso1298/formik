@@ -20,6 +20,7 @@ const validate = (values) => {
   } else if (values.email.length < 5) {
     errors.email = 'El apellido es muy corto';
   }
+
   return errors;
   
 }
@@ -41,27 +42,30 @@ function App() {
         name="name"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur} // Con onBlur sabemos si el campo ah sido tocado o no
         value={formik.values.name}
       />
-      {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+      {formik.touched.name && formik.errors.name ? <div>{formik.errors.name}</div> : null}
       <br />
       <label>Apellido</label>
       <input 
         name="lastname"
         type="text"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.lastname}
       />
-      {formik.errors.lastname ? <div>{formik.errors.lastname}</div> : null}
+      {formik.touched.lastname && formik.errors.lastname ? <div>{formik.errors.lastname}</div> : null}
       <br />
       <label>Email</label>
       <input 
         name="email"
         type="email"
         onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
         value={formik.values.email}
       />
-      {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+      {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
       <br />
       <button type="submit">Enviar</button>
     </form>
