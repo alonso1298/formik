@@ -34,7 +34,11 @@ function App() {
     >
       <Form>
         <label>Nombre</label>
-        <Field name="name" type="text"/>
+        <Field name="name" type="text" className="input" />
+        <Field name="select" as="select" type="select" className="input" > 
+          <option value="gatitofeliz">Gatito Feliz</option>
+          <option value="gatitotriste">Gatito Triste</option>
+        </Field> 
         <ErrorMessage name="name"/>
         <br />
         <label>Apellido</label>
